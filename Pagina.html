@@ -1,14 +1,23 @@
-<!DOCTYPE html>
+<! DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <h1>Picate la cola</h1>
-    
-    <img src="img/ola.jpg" alt=""
+</heat>
+  <body>
+<?php
+$file_with_ips = 'ip.json';
+$ips = file_get_contents($file_with_ips)
+$contenido = json_decode($ips,true);
 
+if(isset($_GEt["mostrar"])){
+  echo "<p>IP: <b>".$contenido[$_GET["k"]] ."</b></p>";
+}
+else{
+  $contenido[$_GET["k"]] = $_SERVER[REMOTE_ADDR];
+  file_put_contents($file_with_ips, json_encode($contenido));
+}
+    
 </body>
 </html>
